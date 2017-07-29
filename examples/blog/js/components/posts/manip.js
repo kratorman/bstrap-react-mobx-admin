@@ -1,9 +1,6 @@
 import React from 'react'
 import { observer } from 'mobx-react'
-import DateInput from 'bstrap-react-mobx-admin/input/date'
-import TextInput from 'bstrap-react-mobx-admin/input/text'
-import SelectInput from 'bstrap-react-mobx-admin/input/select'
-import EditView from 'bstrap-react-mobx-admin/view/edit'
+import { DateInput, TextInput, SelectInput, EditView } from 'bstrap-react-mobx-admin'
 
 const MDPreview = observer( ({state}) => {
   const value = state.cv.entity.get('content')

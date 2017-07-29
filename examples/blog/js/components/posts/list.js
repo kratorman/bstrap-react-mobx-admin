@@ -2,17 +2,15 @@ import React from 'react'
 // import { observer } from 'mobx-react'
 import { asMap } from 'mobx'
 import { DropdownButton, MenuItem, Button } from 'react-bootstrap'
-
-import OptionsField from 'react-mobx-admin/components/common/field/opts_observed'
-import MultivalueField from 'react-mobx-admin/components/common/field/multivalue'
-import TextField from 'bstrap-react-mobx-admin/field/text'
-import DateField from 'bstrap-react-mobx-admin/field/date'
-
-import TextInput from 'bstrap-react-mobx-admin/input/text'  // for filters
-import SelectInput from 'bstrap-react-mobx-admin/input/select'
-
-import ListView from 'bstrap-react-mobx-admin/view/list'
-
+import { MultivalueField } from 'react-mobx-admin'
+import {
+  OptionsField,
+  TextField,
+  DateField,
+  TextInput,  // for filters
+  SelectInput,
+  ListView
+} from 'bstrap-react-mobx-admin'
 
 const PostListView = ({store}) => {
 

@@ -1,31 +1,48 @@
-var webpack = require('webpack')
+var debug = process.env.NODE_ENV !== 'production'
 var path = require('path')
 
 module.exports = {
-  devtool: 'inline-sourcemap',
-  entry: './examples/blog/js/main.js',
-  module: {
-    loaders: [
-      {
-        test: /\.js$/,
-        // NOTE: you need modify exclude regexp when used in separate project
-        // to allow babel to transpile!!!
-        // E.g. /node_modules(?!\/react-mobx-admin)/
-        exclude: /node_modules(?!\/react-mobx-admin)/,
-        loader: 'babel-loader'
-      }
-    ]
-  },
+  devtool: debug ? 'eval-source-map' : 'hidden-source-map',
+  entry: './src-bstrap-rma/index.js',
   output: {
-    path: path.join(__dirname, 'examples/blog'),
-    filename: 'main.min.js'
+    path: path.join(__dirname, 'dist'),
+    filename: 'bstrap-react-mobx-admin.js',
+    library: 'BStrapReactMobxAdmin',
+    libraryTarget: 'umd'
   },
-  // NOTE: needed coz' import like from a separate project are used in example
-  // e.g.: import DataRequester from 'react-mobx-admin/services/requester'
-  resolve: {
-    alias: {
-      'bstrap-react-mobx-admin': __dirname,
-      'react-mobx-admin': path.join(__dirname, "node_modules/react-mobx-admin")
+  module: {
+    loaders: [{
+      test: /\.js$/,
+      exclude: /node_modules/,
+      loader: 'babel-loader'
+    }]
+  },
+  externals: {
+    'lodash': {
+      commonjs: 'lodash',
+      commonjs2: 'lodash',
+      amd: 'lodash',
+      root: '_'
+    },
+    'mobx': 'mobx',
+    'mobx-react': 'mobx-react',
+    'react': {
+      commonjs: 'react',
+      commonjs2: 'react',
+      amd: 'react',
+      root: 'React'
+    },
+    'react-dom': {
+      commonjs: 'react-dom',
+      commonjs2: 'react-dom',
+      amd: 'react-dom',
+      root: 'ReactDOM'
+    },
+    'react-mobx-admin': {
+      commonjs: 'react-mobx-admin',
+      commonjs2: 'react-mobx-admin',
+      amd: 'react-mobx-admin',
+      root: 'ReactMobxAdmin'
     }
   }
 }

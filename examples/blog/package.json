@@ -3,10 +3,12 @@
   "version": "0.0.2",
   "description": "blog example made with react-mobx-admin and bootstrap",
   "dependencies": {
-    "axios": "^0.14.0",
     "mobx": "^2.3.7",
     "mobx-react": "^3.5.1",
-    "react": "^15.2.1"
+    "mobx-router": "0.0.7",
+    "react-dom": "^15.6.1",
+    "react-mobx-admin": "blueskydigital/react-mobx-admin#libifi",
+    "react-mobx-admin-blog": "vencax/react-mobx-admin-blog"
   },
   "devDependencies": {
     "mobx-react-devtools": "^4.2.6"

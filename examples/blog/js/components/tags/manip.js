@@ -1,9 +1,6 @@
 import React from 'react'
 // import { observer } from 'mobx-react'
-import TextInput from 'bstrap-react-mobx-admin/input/text'
-import BoolInput from 'bstrap-react-mobx-admin/input/bool'
-import EditView from 'bstrap-react-mobx-admin/view/edit'
-
+import { TextInput, BoolInput, EditView } from 'bstrap-react-mobx-admin'
 
 const TagEditForm = ({store}) => {
 
